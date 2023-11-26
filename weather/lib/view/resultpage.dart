@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:weather/view_model/appviewmodel.dart';
 
-class startPage extends StatefulWidget {
-  const startPage({super.key});
+class resultPage extends StatefulWidget {
+  resultPage({Key? key}) : super(key: key);
 
   @override
-  State<startPage> createState() => _startPageState();
+  State<resultPage> createState() => _resultPageState();
 }
 
-class _startPageState extends State<startPage> {
+class _resultPageState extends State<resultPage> {
+  AppViewModel appdata = Get.find();
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -23,17 +26,11 @@ class _startPageState extends State<startPage> {
           style: TextStyle(color: Colors.black, fontSize: height * 0.03),
         ),
       ),
-      backgroundColor: Colors.white,
       body: SafeArea(
           child: Center(
-        child: Column(children: [
-          SizedBox(
-            height: height * 0.1,
-          ),
-          Container(
-            child: Text('날씨 앱!!'),
-          )
-        ]),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text(appdata.weatherModel.locationName)]),
       )),
     );
   }

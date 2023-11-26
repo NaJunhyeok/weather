@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'view/startpage.dart';
+import 'package:weather/view_model/appviewmodel.dart';
+import 'view/searchpage.dart';
 
 void main() async {
   // debugPaintSizeEnabled = true;
@@ -17,8 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialBinding: BindingsBuilder(() {
+        Get.put(AppViewModel());
+      }),
       theme: ThemeData(fontFamily: 'Simple'),
-      home: const startPage(),
+      home: const searchPage(),
     );
   }
 }
