@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:weather/controller/weatherApi.dart';
 import 'package:weather/view/resultpage.dart';
 import 'package:weather/view_model/appviewmodel.dart';
 
@@ -11,6 +12,7 @@ class searchPage extends StatefulWidget {
 }
 
 class _searchPageState extends State<searchPage> {
+  weatherApi api = weatherApi();
   AppViewModel appdata = Get.find();
   @override
   Widget build(BuildContext context) {
@@ -62,6 +64,7 @@ class _searchPageState extends State<searchPage> {
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
                   onPressed: () {
                     appdata.weatherModel.locationName = searchController.text;
+                    api.fetchWeather();
                     Get.to(() => resultPage());
                   },
                   child: Text('검색',

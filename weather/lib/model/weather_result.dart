@@ -1,9 +1,9 @@
 WeatherResult? weatherResult;
 
 class WeatherResult {
-  String baseDate;
+  int baseDate;
   String baseTime;
-  List<Map<String, dynamic>> category;
+  String category;
 
   WeatherResult(
       {required this.baseDate, required this.baseTime, required this.category});

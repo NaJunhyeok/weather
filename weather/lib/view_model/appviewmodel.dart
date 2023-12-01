@@ -15,7 +15,7 @@ class AppViewModel extends GetxController {
   }
 
   WeatherResult _weatherResult =
-      WeatherResult(baseDate: '', baseTime: '', category: []);
+      WeatherResult(baseDate: 0, baseTime: '', category: '');
 
   WeatherResult get weatherResult => _weatherResult;
 
