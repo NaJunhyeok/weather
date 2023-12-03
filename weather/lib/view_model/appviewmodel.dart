@@ -1,21 +1,21 @@
 import 'package:get/get.dart';
 import 'package:weather/controller/weatherApi.dart';
-import 'package:weather/model/weather_model.dart';
+import 'package:weather/model/location_model.dart';
 
 import '../model/weather_result.dart';
 
 class AppViewModel extends GetxController {
-  WeatherModel _weatherModel = WeatherModel(locationName: '');
+  LocationModel _locationModel = LocationModel(latitude: 0, longitude: 0);
 
-  WeatherModel get weatherModel => _weatherModel;
+  LocationModel get locationModel => _locationModel;
 
-  set weatherModel(WeatherModel weatherModel) {
-    _weatherModel = weatherModel;
+  set locationModel(LocationModel locationModel) {
+    _locationModel = locationModel;
     update();
   }
 
   WeatherResult _weatherResult =
-      WeatherResult(baseDate: 0, baseTime: '', category: '');
+      WeatherResult(baseDate: 0, baseTime: '', temperture: '');
 
   WeatherResult get weatherResult => _weatherResult;
 
