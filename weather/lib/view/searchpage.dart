@@ -5,7 +5,6 @@ import 'package:weather/controller/location_controller.dart';
 import 'package:weather/controller/weatherApi.dart';
 import 'package:weather/view/resultpage.dart';
 import 'package:weather/view_model/appviewmodel.dart';
-
 import 'dart:math' as Math;
 
 class searchPage extends StatefulWidget {
