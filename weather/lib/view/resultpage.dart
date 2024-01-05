@@ -15,14 +15,6 @@ class resultPage extends StatefulWidget {
 
 class _resultPageState extends State<resultPage> {
   AppViewModel appdata = Get.find();
-  void initState() {
-    super.initState();
-    weatherApi().fetchWeather();
-  }
-  // String apiKey =
-  //     'RxizPAEgVlPXC8OD6dLkYZBZw%2Bz7iSkMaTYXez87La6iQBqX9Ha1Y%2FOQz4wbQPocuzP4kYUvoLlOMnVY%2FuFnoA%3D%3D'; // 공공데이터포털에서 발급받은 API 키를 사용하세요.
-  // String baseUrl =
-  //     'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst';
 
   @override
   Widget build(BuildContext context) {

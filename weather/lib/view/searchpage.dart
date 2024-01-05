@@ -5,6 +5,7 @@ import 'package:weather/controller/location_controller.dart';
 import 'package:weather/controller/weatherApi.dart';
 import 'package:weather/view/resultpage.dart';
 import 'package:weather/view_model/appviewmodel.dart';
+import 'package:intl/intl.dart';
 import 'dart:math' as Math;
 
 class searchPage extends StatefulWidget {
@@ -62,6 +63,8 @@ class _searchPageState extends State<searchPage> {
               onPressed: () {
                 setState(() {
                   getLocationData();
+                  api.fetchTemperture();
+                  print(appdata.weatherResult.temperture);
                 });
               },
               child: Text('위치 갱신')),
@@ -102,7 +105,7 @@ class _searchPageState extends State<searchPage> {
               ElevatedButton(
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
                   onPressed: () {
-                    api.fetchWeather();
+                    api.fetchTemperture();
                     Get.to(() => resultPage());
                   },
                   child: Text('검색',
