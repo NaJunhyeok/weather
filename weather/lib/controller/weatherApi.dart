@@ -19,8 +19,7 @@ class weatherApi {
     String formatTime = DateFormat('HHmm').format(now);
     print(formatDate);
     print(formatTime);
-    int hour = now.hour - 1;
-    var minute = now.minute;
+
     double latitude = appdata.locationModel.latitude;
     double longitude = appdata.locationModel.longitude;
     Map_xy mapxy = changelaluMap(longitude, latitude);

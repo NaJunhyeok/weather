@@ -35,6 +35,7 @@ class _searchPageState extends State<searchPage> {
 
   @override
   Widget build(BuildContext context) {
+    api.fetchTemperture();
     final searchController = TextEditingController();
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
@@ -63,7 +64,7 @@ class _searchPageState extends State<searchPage> {
               onPressed: () {
                 setState(() {
                   getLocationData();
-                  api.fetchTemperture();
+
                   print(appdata.weatherResult.temperture);
                 });
               },

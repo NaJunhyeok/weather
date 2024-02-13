@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:weather/view/startpage.dart';
 import 'package:weather/view_model/appviewmodel.dart';
 import 'view/searchpage.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         Get.put(AppViewModel());
       }),
       theme: ThemeData(fontFamily: 'Simple'),
-      home: const searchPage(),
+      home: startPage(),
     );
   }
 }
